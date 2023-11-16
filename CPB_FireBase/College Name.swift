@@ -1,8 +1,15 @@
-//
-//  College Name.swift
-//  CPB_FireBase
-//
-//  Created by vincent chen on 11/6/23.
-//
-
 import Foundation
+
+struct Task
+{
+    var name:String
+    var location:String
+    var Url:String
+    var numberofstu:String
+    var completed:Bool
+    
+    
+    
+    
+}
+

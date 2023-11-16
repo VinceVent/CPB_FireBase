@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
-
+import FirebaseCore
 @main
 struct CPB_FireBaseApp: App {
+    //init(){CPB_FireBaseApp.configure()}
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
+        
     }
 }
