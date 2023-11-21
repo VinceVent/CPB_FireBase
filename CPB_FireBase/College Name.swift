@@ -6,7 +6,7 @@ struct Task
     var location:String
     var Url:String
     var numberofstu:String
-    var completed:Bool
+    
     
     
     

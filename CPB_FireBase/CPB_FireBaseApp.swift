@@ -10,9 +10,14 @@ import FirebaseCore
 @main
 struct CPB_FireBaseApp: App {
     //init(){CPB_FireBaseApp.configure()}
+    init(){
+    FirebaseApp.configure()
+    
+}
     var body: some Scene {
         WindowGroup {
             ContentView()
+           
         }
         
     }

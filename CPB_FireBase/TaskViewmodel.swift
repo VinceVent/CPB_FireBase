@@ -24,8 +24,11 @@ class TaskVeiwModel: ObservableObject {
     func AddtoFirebase(task: Task) {
         
         let database = Database.database().reference()
-        database.child("Tasks").child(task.name).child("complete").setValue(task.completed)
-        
+    
+        let dictionary = ["college":["location":"Loc","URL": "URL","numberofstudents": 30]]
+        database.child("Students").child(task.name).setValue(dictionary)
+        //add more children
+          //  .child(task.name).child("numberofstudents").child("URL").child("Location")
     }
     func PullfromFirebase(){
         
@@ -39,12 +42,14 @@ class TaskVeiwModel: ObservableObject {
                 let Loc = task.key
                 let URL = task.key
                 let number = task.key
-                let dictionary = task.value as! [String:Bool]
-                guard let complete = dictionary["complete"] else {return}
-
+                let dictionary = task.value as! [String:Any]
+               
+                guard let complete = dictionary["numberofstudents"] else {return}
+                guard let complete = dictionary["URL"] else {return}
+                guard let Location = dictionary["Location"] else {return}
            //     let currentTask = Task(Name: nameOfcollege, completed: complete)
                 //let currentTask = Task(name: nameOfcollege, location: Loc, Url: URL, numberofstu: number, completed: complete)
-                let currentTask = Task(name: nameOfcollege, location: Loc, Url: URL, numberofstu: number, completed: complete)
+                let currentTask = Task(name: nameOfcollege, location: Loc as! String, Url: URL as! String, numberofstu: number as! String as! String) 
                 newList.append(currentTask)
                 
             }

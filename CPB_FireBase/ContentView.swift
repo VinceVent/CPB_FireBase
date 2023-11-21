@@ -38,7 +38,7 @@ struct ContentView: View {
 
 
 Button("Submit"){
-let college = Task( name:Name,location: Location, Url: URl, numberofstu: Num, completed: false)
+let college = Task( name:Name,location: Location, Url: URl, numberofstu: Num)
 ViewModel.AddTask(currentTask: college)
 Name = ""
 Location = ""
